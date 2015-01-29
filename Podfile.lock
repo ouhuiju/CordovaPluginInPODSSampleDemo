@@ -1,0 +1,18 @@
+PODS:
+  - Cordova (3.7.0)
+  - CordovaPlugin-console (0.2.10):
+    - Cordova (>= 3.0.0)
+  - CordovaPlugin-device (0.2.11):
+    - Cordova (>= 3.0.0)
+
+DEPENDENCIES:
+  - Cordova
+  - CordovaPlugin-console
+  - CordovaPlugin-device
+
+SPEC CHECKSUMS:
+  Cordova: f5bcb368da481ebd952ab5117f0bea4bebbdb9d1
+  CordovaPlugin-console: dab0459a59d12da6ec703e55ab6745967803c38b
+  CordovaPlugin-device: 2c696f82ecaadfccfba97c33fdc16f443b88d916
+
+COCOAPODS: 0.35.0

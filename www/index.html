@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Device Example</title>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="plugins/org.apache.cordova.device/www/device.js"></script>
+        <script type="text/javascript" charset="utf-8" src="plugins/org.apache.cordova.console/www/logger.js"></script>
+        <script type="text/javascript" charset="utf-8" src="plugins/CustomPlugin.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            function getTheDeviceInfo() {
+                alert( "device.Model is:" +device.model+"\n device.cordova is:" +device.cordova+"\n device.uuid is:" + device.uuid+"\n device.version is:" +device.version+"\n device.platform is:" +device.platform);
+                console.log("this is a Js console");
+            }
+        </script>
+        <script type="text/javascript" charset="utf-8">
+        var jsonData1 = {"city":"Hong kong","country":"china"};
+        var JsonData2 = {"city":"Zhu hai","country":"china"};
+            function JsCallNativeFun() {
+                CustomPlugin.nativeFunction("JsCallNative",
+                                            [jsonData1,JsonData2],function(result){alert(result);});
+            }
+        </script>
+        <script type="text/javascript" charset="utf-8">
+            function NativeCallJsFun() {
+                CustomPlugin.nativeFunction("presentToTheNativeCallJsView",[''],function(result){alert(result);});
+            }
+        </script>
+        <script type="text/javascript" charset="utf-8">
+            function detailCount(count){
+                document.getElementById("count").innerHTML = "NativeCallJsExample: "+count;
+            }
+        </script>
+    </head>
+    <body>
+        <br>
+        <br>
+        <center><h1>Example</h1></center>
+        <br>
+        <center><p>GetDeviceExample</p></center>
+        <center><p><a href="#" onclick="getTheDeviceInfo(); return false;">GetDeviceInfo</a></p><center>
+        <br>
+        <center><p>JsCallNativeExample</p></center>
+        <center><p><a href="#" onclick="JsCallNativeFun(); return false;">JsCallNative</a></p><center>
+            <br>
+        <center><p id="count">NativeCallJsExample</p></center>
+        <center><p><a href="#" onclick="NativeCallJsFun(); return false;">NativeCallJs</a></p><center>
+        <br>
+    </body>
+</html>
